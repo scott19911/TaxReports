@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sonar-l10n-zh-plugin-9.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/sonar-l10n-zh-plugin-9.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

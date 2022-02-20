@@ -1,0 +1,10 @@
+
+|
+java:S1989,"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÜÕˆêøÿÿÿÿ
+|
+java:S1989/"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÜÕˆêøÿÿÿÿ
+n
+java:S19896"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ìè¸Ïþÿÿÿÿ
+f
+java:S1128"IRemove this unused import 'com.example.taxreports.util.SecurityPassword'.(Ôƒ‰–8­èª¥ï/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(é¡¨Ðÿÿÿÿÿ

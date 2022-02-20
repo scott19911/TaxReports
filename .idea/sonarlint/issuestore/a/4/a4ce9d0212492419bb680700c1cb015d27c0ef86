@@ -1,0 +1,18 @@
+
+—
+java:S1186""€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
+œ
+java:S1186e"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àä™´ıÿÿÿÿ
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¢Ü€óşÿÿÿÿ
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(Åü«ğ8ªõŞÄğ/
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(€ËÓ8ªõŞÄğ/
+P
+java:S1128	".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8«õŞÄğ/
+M
+java:S1128
+"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8«õŞÄğ/
+L
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8«õŞÄğ/

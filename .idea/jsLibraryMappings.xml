@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{demo_page, demo_table, demo_table_jui, jquery-2.0.3, jquery-ui, jquery-ui-1.10.0.custom, jquery.dataTables, jquery.dataTables_themeroller}" />
+  </component>
+</project>
