@@ -3,7 +3,9 @@ package com.example.taxreports.controller.Reports;
 import com.example.taxreports.DAO.ReportsDAO;
 import com.example.taxreports.bean.ReportBean;
 import com.example.taxreports.bean.UserBean;
+import com.example.taxreports.controller.Individual.InsertInd;
 import com.example.taxreports.util.SecurityPassword;
+import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,7 +20,7 @@ import java.util.List;
 
 @WebServlet("/reportList")
 public class ReportListServlet extends HttpServlet {
-
+    private static final Logger log = Logger.getLogger(ReportListServlet.class);
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,6 +39,7 @@ public class ReportListServlet extends HttpServlet {
         } else {
              list = reportsDAO.getUserReport(user.getId());
         }
+        log.info("show report for user " + user);
         request.setAttribute("arc", isArch);
         request.setAttribute("list", list);
         if(request.getParameter("works") != null){

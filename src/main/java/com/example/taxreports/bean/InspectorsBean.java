@@ -36,4 +36,13 @@ public class InspectorsBean {
     public void setfName(String fName) {
         this.fName = fName;
     }
+
+    @Override
+    public String toString() {
+        return "InspectorsBean{" +
+                "userId=" + userId +
+                ", fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                '}';
+    }
 }

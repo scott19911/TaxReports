@@ -3,7 +3,6 @@ package com.example.taxreports.controller.Individual;
 import com.example.taxreports.DAO.IndividualDAO;
 import com.example.taxreports.DAO.UserDAO;
 import com.example.taxreports.bean.UserBean;
-import com.example.taxreports.controller.Entytis.EditEntyti;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -16,11 +15,13 @@ import java.io.IOException;
 
 @WebServlet("/insertInd")
 public class InsertInd extends HttpServlet {
+    private static final Logger log = Logger.getLogger(InsertInd.class);
+
     String act;
     private static final String ACTION_INSERT= "insert";
     private static final String ACTION_EDIT= "edit";
     public static final String EMPTY= "empty";
-    private static final Logger log = Logger.getLogger(InsertInd.class);
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -58,4 +58,15 @@ public class IndividualBean {
     public void setTin(String tin) {
         this.tin = tin;
     }
+
+    @Override
+    public String toString() {
+        return "IndividualBean{" +
+                "userId=" + userId +
+                ", fName='" + fName + '\'' +
+                ", sName='" + sName + '\'' +
+                ", lName='" + lName + '\'' +
+                ", tin='" + tin + '\'' +
+                '}';
+    }
 }

@@ -35,7 +35,6 @@ public class ReportServlet extends HttpServlet {
         }
 
         RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/UploadReport.jsp");
-
         dispatcher.forward(request, response);
     }
 
@@ -89,7 +88,7 @@ public class ReportServlet extends HttpServlet {
         } catch (Exception e) {
             log.error("Cannot load file", e);
             request.setAttribute("errorMessage", "Error: " + e.getMessage());
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/UploadReport.jsp");
+            RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/UploadReport.jsp");
             dispatcher.forward(request, response);
         }
     }

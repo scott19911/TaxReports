@@ -1,5 +1,7 @@
 package com.example.taxreports.util;
 
+import org.apache.log4j.Logger;
+
 import java.util.Collection;
 import java.util.Map;
 
@@ -8,7 +10,7 @@ import javax.servlet.ServletRegistration;
 import javax.servlet.http.HttpServletRequest;
 
 public class UrlPatternUtils {
-
+    private static final Logger log = Logger.getLogger(UrlPatternUtils.class);
     private static boolean hasUrlPattern(ServletContext servletContext, String urlPattern) {
 
         Map<String, ? extends ServletRegistration> map = servletContext.getServletRegistrations();
@@ -22,6 +24,7 @@ public class UrlPatternUtils {
             }
 
         }
+        log.info("URL was not found");
         return false;
     }
 

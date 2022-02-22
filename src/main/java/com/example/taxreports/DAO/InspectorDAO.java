@@ -11,12 +11,12 @@ import java.sql.SQLException;
 public class InspectorDAO {
 
     private static final Logger log = Logger.getLogger(InspectorDAO.class);
-    private static final String UPDATE_REPORT= "Update report Set status_id=?, inspector_id = ? where id = ?";
+    private static final String UPDATE_REPORT_STATUS = "Update report Set status_id=?, inspector_id = ? where id = ?";
     private static final String UPDATE_REPORT_WITH_COMMENT = "Update report Set status_id=?, inspector_id = ?, comments =? where id = ?";
 
     public void updateReportStatus(int statusId,int idReport, int idInspector){
 
-    try (Connection con= ConnectionPool.getInstance().getConnection(); PreparedStatement stm = con.prepareStatement(UPDATE_REPORT)){
+    try (Connection con= ConnectionPool.getInstance().getConnection(); PreparedStatement stm = con.prepareStatement(UPDATE_REPORT_STATUS)){
        stm.setInt(1, statusId);
        stm.setInt(2,idInspector);
        stm.setInt(3,idReport);

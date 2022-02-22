@@ -1,5 +1,7 @@
 package com.example.taxreports.util;
 
+import org.apache.log4j.Logger;
+
 import java.security.Principal;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +21,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
  *
  */
 public class UserRoleRequestWrapper extends HttpServletRequestWrapper {
-
+    private static final Logger log = Logger.getLogger(UserRoleRequestWrapper.class);
     private int user;
     private String roles = null;
     private HttpServletRequest realRequest;
@@ -29,6 +31,7 @@ public class UserRoleRequestWrapper extends HttpServletRequestWrapper {
         this.user = user;
         this.roles = roles;
         this.realRequest = request;
+        log.info("user request wrapped");
     }
 
     @Override

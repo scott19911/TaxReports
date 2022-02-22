@@ -57,9 +57,7 @@ public class RegisterServlet extends HttpServlet {
                 log.info("Register user role entyti");
                 response.sendRedirect("/editEntyti?action=insert");
             }
-        }
-        else   //On Failure, display a meaningful message to the User.
-        {
+        } else { //On Failure, display a meaningful message to the User.
             log.warn("Cannot register user");
             request.setAttribute("errMessage", "Try again");
             request.getRequestDispatcher("/ErrorPage.jsp").forward(request, response);

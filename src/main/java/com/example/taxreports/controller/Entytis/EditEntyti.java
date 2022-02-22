@@ -16,6 +16,7 @@ import java.io.IOException;
 
 @WebServlet("/editEntyti")
 public class EditEntyti extends  HttpServlet {
+
         String act;
         private static final String ACTION_INSERT= "insert";
         private static final String ACTION_EDIT= "edit";

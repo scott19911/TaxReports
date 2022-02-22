@@ -1,5 +1,7 @@
 package com.example.taxreports.util;
 
+import org.apache.log4j.Logger;
+
 import java.util.List;
 import java.util.Set;
 
@@ -7,11 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 
 
 public class SecurityUtils {
-
+    private static final Logger log = Logger.getLogger(SecurityUtils.class);
     // Проверить требует ли данный 'request' входа в систему или нет.
     public static boolean isSecurityPage(HttpServletRequest request) {
         String urlPattern = UrlPatternUtils.getUrlPattern(request);
-
+        log.info("chek security page");
         Set<String> roles = SecurityConfig.getAllAppRoles();
 
         for (String role : roles) {

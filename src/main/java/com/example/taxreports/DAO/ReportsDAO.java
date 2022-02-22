@@ -154,11 +154,13 @@ public class ReportsDAO {
                 description = rs.getString("description");
                 insp = rs.getString("inspec");
                 String creater = rs.getString("creater");
-                String createrName;
-                if(rs.getString("user") != null){
-                    createrName = rs.getString("user");
-                } else {
-                    createrName = rs.getString("company");
+                String createrName = "";
+                String user = rs.getString("user");
+                String company = rs.getString("company");
+                if(user != null){
+                    createrName = user;
+                } else if (company != null){
+                    createrName = company;
                 }
                 list.add(new ReportBean(id, status, creater, insp, comments, date, filePath, createrName, description));
 
@@ -178,10 +180,10 @@ public class ReportsDAO {
         List<ReportBean> list = new ArrayList<>();
         int id;
         String creater;
-        String createrName;
+        String createrName = "";
 
         try(Connection con = ConnectionPool.getInstance().getConnection(); PreparedStatement pstm = con.prepareStatement(SELECT_ARCHIV_REPORT)) {
-            con.setAutoCommit(false);
+
             pstm.setInt(1, ReportBean.STATUS_ACCEPTED);
             pstm.setInt(2, ReportBean.STATUS_REJECT);
             ResultSet rs = pstm.executeQuery();
@@ -194,15 +196,15 @@ public class ReportsDAO {
                 creater = rs.getString("creater");
                 description = rs.getString("description");
                 insp = rs.getString("inspec");
-                if(rs.getString("user") != null){
-                    createrName = rs.getString("user");
-                } else {
-                    createrName = rs.getString("company");
+                String user = rs.getString("user");
+                String company = rs.getString("company");
+                if(user != null){
+                    createrName = user;
+                } else if (company != null){
+                    createrName = company;
                 }
                 list.add(new ReportBean(id, status, creater, insp, comments, date, filePath, createrName , description));
             }
-
-            con.setAutoCommit(true);
 
         } catch (SQLException | ParseException e) {
             log.error(e);

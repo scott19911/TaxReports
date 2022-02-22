@@ -1,8 +1,7 @@
 package com.example.taxreports.bean;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class CommentsBean implements Serializable {
     int idReport;

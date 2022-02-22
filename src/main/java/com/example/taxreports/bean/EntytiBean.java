@@ -39,4 +39,13 @@ public class EntytiBean {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+
+    @Override
+    public String toString() {
+        return "EntytiBean{" +
+                "company='" + company + '\'' +
+                ", okpo='" + okpo + '\'' +
+                ", userId=" + userId +
+                '}';
+    }
 }

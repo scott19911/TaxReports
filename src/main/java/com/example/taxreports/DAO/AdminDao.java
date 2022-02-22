@@ -10,11 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdminDao {
+
+    private static final Logger log = Logger.getLogger(AdminDao.class);
     private static final String UPDATE_INSPECTOR = "update inspectors set Fname =?, Lname =? where user_id =? ";
     private static final String INSERT_INSPECTORS = "insert into inspectors (Fname, Lname,user_id) values (?,?,?) ";
     private static final String DELETE_INSPECTORS = "delete from inspectors where user_id =? ";
     private static final String SELECT_ALL_INSPECTORS ="select user_id, FName,LName from inspectors";
-    private static final Logger log = Logger.getLogger(AdminDao.class);
+
 
     public void editInspector(int id, String fName, String sName){
 

@@ -47,16 +47,6 @@ public class ReportBean {
         this.description = description;
     }
 
-    public ReportBean(String creater, int id, int status, String inspector, String comments, Date date, String filePath, String description) {
-        this.creater = creater;
-        this.status = status;
-        this.id= id;
-        this.inspector = inspector;
-        this.comments = comments;
-        this.date = date;
-        this.filePath = filePath;
-        this.description = description;
-    }
     public String getDescription() {
         return description;
     }
@@ -129,5 +119,20 @@ public class ReportBean {
 
     public void setCreaterName(String createrName) {
         this.createrName = createrName;
+    }
+
+    @Override
+    public String toString() {
+        return "ReportBean{" +
+                "id=" + id +
+                ", status=" + status +
+                ", creater='" + creater + '\'' +
+                ", inspector='" + inspector + '\'' +
+                ", comments='" + comments + '\'' +
+                ", date=" + date +
+                ", filePath='" + filePath + '\'' +
+                ", createrName='" + createrName + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

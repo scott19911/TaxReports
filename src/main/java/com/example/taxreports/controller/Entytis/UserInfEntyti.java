@@ -5,6 +5,8 @@ import com.example.taxreports.DAO.IndividualDAO;
 import com.example.taxreports.bean.EntytiBean;
 import com.example.taxreports.bean.IndividualBean;
 import com.example.taxreports.bean.UserBean;
+import com.example.taxreports.controller.Authorization.RegisterServlet;
+import org.apache.log4j.Logger;
 
 import javax.management.relation.Role;
 import javax.servlet.ServletException;
@@ -17,6 +19,7 @@ import java.io.IOException;
 
 @WebServlet("/accountEntyti")
 public class UserInfEntyti extends HttpServlet {
+    private static final Logger log = Logger.getLogger(UserInfEntyti.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
@@ -28,6 +31,7 @@ public class UserInfEntyti extends HttpServlet {
         } else {
             userId = user.getId();
         }
+        log.info("show info user = " + userId);
         EntytiBean infEntyti = EntytiDAO.userInfo(userId);
         req.setAttribute("infEntyti", infEntyti);
         req.getRequestDispatcher("/entytiAccount.jsp").forward(req, resp);

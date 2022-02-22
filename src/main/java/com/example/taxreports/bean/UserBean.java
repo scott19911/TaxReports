@@ -22,4 +22,12 @@ public class UserBean implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "UserBean{" +
+                "role='" + role + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }

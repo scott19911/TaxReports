@@ -1,5 +1,8 @@
 package com.example.taxreports.util;
 
+import com.example.taxreports.DAO.AdminDao;
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class SecurityConfig {
-
+    private static final Logger log = Logger.getLogger(SecurityConfig.class);
     public static final String ROLE_INSPECTOR= "insp";
     public static final String ROLE_INDIVIDUAL= "indi";
     public static final String ROLE_ENTYTI= "entyti";
@@ -66,7 +69,7 @@ public class SecurityConfig {
 
         mapConfig.put(ROLE_ADMIN, urlPatterns3);
 
-
+        log.info("setup security confif");
     }
 
     public static Set<String> getAllAppRoles() {

@@ -75,7 +75,7 @@ public class SecurityFilter implements Filter {
                 log.info(" Not allowed accesses ");
                 request.setAttribute("errMessage","Sorry your need login or register");
                 RequestDispatcher dispatcher //
-                        = request.getServletContext().getRequestDispatcher("/ErrorPage.jsp");
+                        = request.getRequestDispatcher("/ErrorPage.jsp");
 
                 dispatcher.forward(request, response);
                 return;
@@ -87,7 +87,7 @@ public class SecurityFilter implements Filter {
                 log.info(" Not allowed for this role");
                 request.setAttribute("errMessage","Sorry you can't go there, please log in ");
                 RequestDispatcher dispatcher //
-                        = request.getServletContext().getRequestDispatcher("/ErrorPage.jsp");
+                        = request.getRequestDispatcher("/ErrorPage.jsp");
 
                 dispatcher.forward(request, response);
                 return;

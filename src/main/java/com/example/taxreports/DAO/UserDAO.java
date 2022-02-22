@@ -131,8 +131,8 @@ public class UserDAO {
         }
     }
 
-    public  String getSalByLogin (String login){
-        String salt = null;
+    public String getSalByLogin (String login){
+        String salt;
         try (Connection con= ConnectionPool.getInstance().getConnection();
              PreparedStatement stm = con.prepareStatement(SELECT_SALT_FROM_USERS_WHERE_LOGIN)){
             stm.setString(1,login);
@@ -140,6 +140,8 @@ public class UserDAO {
             ResultSet rs = stm.executeQuery();
             if (rs.next()){
                 salt = rs.getString("salt");
+            } else {
+                salt = null;
             }
         } catch (SQLException e) {
             log.error(e);
@@ -153,7 +155,6 @@ public class UserDAO {
         try (Connection con= ConnectionPool.getInstance().getConnection();
              PreparedStatement stm = con.prepareStatement(SELECT_ID_USER_BY_LOGIN)){
             stm.setString(1,login);
-
             ResultSet rs = stm.executeQuery();
             if (rs.next()){
                 id = rs.getInt("id");
